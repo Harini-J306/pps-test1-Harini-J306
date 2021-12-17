@@ -1,25 +1,25 @@
-#include<stdio.h>
-void input(int *a, int *b);
-void add(int a, int b, int *sum);
-void output(int a, int b, int sum);
-int main()
+#include <stdio.h>
+ 
+void main()
 {
-  int a,b,c;
-  printf("enter two numbers\n");
-  input(&a,&b);
-  add(a,b,&c);
-  output(a,b,c);
-  return 0;
-}
-void input(int *a,int *b)
-{
-  scanf("%d%d",a,b);
-}
-void add(int a, int b, int *sum)
-{
-  *sum=a+b;
-}
-void output(int a, int b, int sum)
-{
-  printf("sum of %d+%d=%d",a,b,sum);
+    int num1, num2, num3;
+ 
+    printf("Enter the values of num1, num2 and num3\n");
+    scanf("%d %d %d", &num1, &num2, &num3);
+    printf("num1 = %d\tnum2 = %d\tnum3 = %d\n", num1, num2, num3);
+    if (num1 > num2)
+    {
+        if (num1 > num3)
+        {
+            printf("num1 is the greatest among three \n");
+        }
+        else
+        {
+            printf("num3 is the greatest among three \n");
+        }
+    }
+    else if (num2 > num3)
+        printf("num2 is the greatest among three \n");
+    else
+        printf("num3 is the greatest among three \n");
 }

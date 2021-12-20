@@ -1,0 +1,23 @@
+(gdb) b main
+Breakpoint 1 at 0x7fc: file p4original.c, line 17.
+(gdb) r
+Starting program: /home/runner/pps-test1-Harini-J306-10/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p4original.c:17
+17  {
+(gdb) n
+19   input(&a,&b);   
+(gdb) n
+enter two numbers
+5
+7
+20   add(a,b,&sum);
+(gdb) n
+21   output(a,b,sum);
+(gdb) n
+sum of 5 + 7 is 12
+22   return 0;  
+(gdb) c
+Continuing.
+[Inferior 1 (process 143) exited normally]

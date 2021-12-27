@@ -1,25 +1,52 @@
-#include <stdio.h>
- 
-void main()
+#include<stdio.h>
+void input(int *a, int *b, int *c)
 {
-    int num1, num2, num3;
- 
-    printf("Enter the values of num1, num2 and num3\n");
-    scanf("%d %d %d", &num1, &num2, &num3);
-    printf("num1 = %d\tnum2 = %d\tnum3 = %d\n", num1, num2, num3);
-    if (num1 > num2)
-    {
-        if (num1 > num3)
-        {
-            printf("num1 is the greatest among three \n");
-        }
-        else
-        {
-            printf("num3 is the greatest among three \n");
-        }
+  printf("enter the first number: ");
+  scanf("%d" , a);
+  printf("enter the second number: ");
+  scanf("%d" , b);
+  printf("enter the third number: ");
+  scanf("%d" , c);
+}
+void cmp(int a, int b, int c, int *large)
+{
+  if(a>b){
+    if(a>c){
+      *large = a;
+}else{
+  *large = c;
+}
+  }else{
+    if(b>c){
+      *large = b;
+    }else{
+      *large = c;
     }
-    else if (num2 > num3)
-        printf("num2 is the greatest among three \n");
-    else
-        printf("num3 is the greatest among three \n");
+  }
+  }
+  void output(int large){
+    printf("the largest is: %d\n", large);
+  }
+  int main()
+  {
+    int a, b, c, large;
+    input(&a, &b, &c);
+    cmp(a, b, c, &large);
+    output(large);
+    return 0;
+  }
+
+  #include<stdio.h>
+int main()
+{
+  int a,b,c;
+  printf("enter 3 numbers\n");
+  scanf("%d %d %d",&a,&b,&c);
+  if((a>b)&&(a>c))
+  printf("A is big\n");
+  else if((b>a)&&(b>c))
+  printf("B is big\n");
+  else if ((c>a)&&(c>b))
+  printf("C is big\n");
+  return 0;
 }

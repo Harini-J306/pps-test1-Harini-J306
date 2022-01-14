@@ -1,10 +1,10 @@
 #include <stdio.h>
-int s,a1,b1;
+int s,a,b;
 int input()
 {
-  printf("Enter 2 numbers\n");
-  scanf("%d%d",&a1,&b1);
-  return 0;
+printf("enter 2 numbers\n");
+scanf("%d %d",&a,&b);
+return 0;
 }
 int add(int a,int b)
 {
@@ -13,11 +13,11 @@ int add(int a,int b)
 }
 void output()
 {
-printf("%d",s);
+  printf("%d",s);
 }
-void main()
+int main()
 {
   input();
-  s=add(a1,b1);
+  s=add(a,b);
   output();
 }

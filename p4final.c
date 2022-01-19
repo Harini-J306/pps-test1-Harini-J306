@@ -1,23 +1,30 @@
 #include<stdio.h>
-void input(int *a,int *b) 
+int input()
 {
- printf("enter two numbers\n");    
- scanf("%d%d",a,b);
+    int a;
+    scanf("%d",&a);
+    return a;
 }
-void add(int a,int b,int *sum) 
-{     
- *sum=a+b;   
-}
-void output(int a,int b,int sum)
+int cmp(int a,int b,int c)
 {
-  printf("sum of %d + %d is %d\n",a,b,sum);  
+    if(a>b && a>c)
+    return a;
+    else if(b>a && b>c)
+    return b;
+    else return c;
 }
-
+void output(int result)
+{
+    printf("%d is greatest",result);
+}
 int main()
 {
- int a,b,sum;
- input(&a,&b);   
- add(a,b,&sum);
- output(a,b,sum);
- return 0;  
-}       
+    int a,b,c,result;
+    printf("enter three numbers\n");
+    a=input();
+    b=input();
+    c=input();
+    result=cmp(a,b,c);
+    output(result);
+    return 0;
+}

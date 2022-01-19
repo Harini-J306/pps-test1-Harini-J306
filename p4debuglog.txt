@@ -1,23 +1,30 @@
 (gdb) b main
-Breakpoint 1 at 0x7fc: file p4original.c, line 17.
+Breakpoint 1 at 0x81a: file p4original.c, line 23.
 (gdb) r
-Starting program: /home/runner/pps-test1-Harini-J306-10/a.out 
+Starting program: /home/runner/pps-test1-Harini-J306-21/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p4original.c:17
-17  {
+Breakpoint 1, main () at p4original.c:23
+23      printf("enter three numbers\n");
 (gdb) n
-19   input(&a,&b);   
+enter three numbers
+24      a=input();
 (gdb) n
-enter two numbers
+3
+25      b=input();
+(gdb) n
 5
+26      c=input();
+(gdb) n
 7
-20   add(a,b,&sum);
+27      result=cmp(a,b,c);
 (gdb) n
-21   output(a,b,sum);
+28      output(result);
 (gdb) n
-sum of 5 + 7 is 12
-22   return 0;  
+29      return 0;
+(gdb) n
+30  }
 (gdb) c
 Continuing.
-[Inferior 1 (process 143) exited normally]
+7 is greatest[Inferior 1 (process 139) exited normally]
+(gdb) 

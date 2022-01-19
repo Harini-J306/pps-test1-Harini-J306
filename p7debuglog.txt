@@ -1,0 +1,33 @@
+(gdb) b main
+Breakpoint 1 at 0x8af: file p7original.c, line 35.
+(gdb) r
+Starting program: /home/runner/pps-test1-Harini-J306-21/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p7original.c:35
+35  {
+(gdb) n
+37    n=input_array_size();
+(gdb) n
+enter the array size
+5
+38    int a[n];
+(gdb) n
+39    input_array(n, a);
+(gdb) n
+
+enter the array elements
+5
+45
+4
+3
+3
+40    sum=sum_n_arrays(n, a);
+(gdb) n
+41    out_put(n,a,sum);
+(gdb) n
+42    return 0;
+(gdb) n
+43  }(gdb) c
+Continuing.
+sum is 60[Inferior 1 (process 520) exited normally]

@@ -1,0 +1,21 @@
+gdb) b main
+Breakpoint 1 at 0x772: file p8original.c, line 9.
+(gdb) r
+Starting program: /home/runner/pps-test1-Harini-J306-21/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p8original.c:9
+9    n=input();
+(gdb) n
+enter a number
+7
+10   sqrt_result=my_sqrt(n);
+(gdb) n
+11   output(n,sqrt_result);
+(gdb) n
+12   return 0;
+(gdb) n
+13  }
+(gdb) c
+Continuing.
+squareroot of 7.000000 is 2.000000[Inferior 1 (process 568) exited normally]

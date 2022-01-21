@@ -1,1 +1,23 @@
- 
+gdb) b main
+Breakpoint 1 at 0x8a1: file p9original.c, line 34.
+(gdb) r
+Starting program: /home/runner/pps-test1-Harini-J306-23/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p9original.c:34
+34  {
+(gdb) n
+37      input_two_string(a,b);
+(gdb) n
+enter two strings
+adv
+asv
+38      strcmpp(a,b);
+(gdb) n
+39      output(a,b,result);
+(gdb) n
+40      return 0;
+(gdb) n
+41  }(gdb) c
+Continuing.
+adv is lesser than asv[Inferior 1 (process 186) exited normally] 

@@ -1,7 +1,24 @@
+~/pps-test1-Harini-J306-29$ gcc -g p4original.c
+~/pps-test1-Harini-J306-29$ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
 (gdb) b main
 Breakpoint 1 at 0x81a: file p4original.c, line 23.
 (gdb) r
-Starting program: /home/runner/pps-test1-Harini-J306-21/a.out 
+Starting program: /home/runner/pps-test1-Harini-J306-29/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
 Breakpoint 1, main () at p4original.c:23
@@ -9,22 +26,79 @@ Breakpoint 1, main () at p4original.c:23
 (gdb) n
 enter three numbers
 24      a=input();
+(gdb) s
+input () at p4original.c:3
+3   {
+(gdb) n
+5       scanf("%d",&a);
 (gdb) n
 3
+6       return a;
+(gdb) n
+7   }
+(gdb) b main
+Note: breakpoint 1 also set at pc 0x561aae00081a.
+Breakpoint 2 at 0x561aae00081a: file p4original.c, line 23.
+(gdb) n
+main () at p4original.c:25
 25      b=input();
+(gdb) s
+input () at p4original.c:3
+3   {
+(gdb) n
+5       scanf("%d",&a);
+(gdb) n
+6
+6       return a;
+(gdb) n
+7   }
+(gdb) b main
+Note: breakpoints 1 and 2 also set at pc 0x561aae00081a.
+Breakpoint 3 at 0x561aae00081a: file p4original.c, line 23.
+(gdb) n
+main () at p4original.c:26
+26      c=input();
+(gdb) s
+input () at p4original.c:3
+3   {
+(gdb) n
+5       scanf("%d",&a);
 (gdb) n
 5
-26      c=input();
+6       return a;
 (gdb) n
-7
+7   }
+(gdb) b main
+Note: breakpoints 1, 2 and 3 also set at pc 0x561aae00081a.
+Breakpoint 4 at 0x561aae00081a: file p4original.c, line 23.
+(gdb) n
+main () at p4original.c:27
 27      result=cmp(a,b,c);
+(gdb) s
+cmp (a=3, b=6, c=5) at p4original.c:10
+10      if(a>b && a>c)
 (gdb) n
+12      else if(b>a && b>c)
+(gdb) n
+13      return b;
+(gdb) n
+15  }
+(gdb) b main
+Note: breakpoints 1, 2, 3 and 4 also set at pc 0x561aae00081a.
+Breakpoint 5 at 0x561aae00081a: file p4original.c, line 23.
+(gdb) n
+main () at p4original.c:28
 28      output(result);
+(gdb) s
+output (result=6) at p4original.c:18
+18      printf("%d is greatest",result);
 (gdb) n
+19  }
+(gdb) n
+main () at p4original.c:29
 29      return 0;
 (gdb) n
 30  }
 (gdb) c
 Continuing.
-7 is greatest[Inferior 1 (process 139) exited normally]
-(gdb) 
+6 is greatest[Inferior 1 (process 259) exited normally]

@@ -1,7 +1,24 @@
-gdb) b main
+~/pps-test1-Harini-J306-30$ gcc -g p6original.c
+~/pps-test1-Harini-J306-30$ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
 Breakpoint 1 at 0x827: file p6original.c, line 36.
 (gdb) r
-Starting program: /home/runner/pps-test1-Harini-J306-21/a.out 
+Starting program: /home/runner/pps-test1-Harini-J306-30/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
 Breakpoint 1, main () at p6original.c:36
@@ -9,14 +26,82 @@ Breakpoint 1, main () at p6original.c:36
 (gdb) n
 enter the maximum value
 37      n=input();
+(gdb) s
+input () at p6original.c:8
+8   {
+(gdb) n
+10      scanf("%d", &n);
 (gdb) n
 9
-38      sum=sum_n(n);
+11      return n;
 (gdb) n
+12  }
+(gdb) 
+main () at p6original.c:38
+38      sum=sum_n(n);
+(gdb) s
+sum_n (n=9) at p6original.c:16
+16      int sum=0;
+(gdb) n
+17      for(int i=1; i<=n; i++)
+(gdb) n
+19          sum = sum + i;
+(gdb) n
+17      for(int i=1; i<=n; i++)
+(gdb) n
+19          sum = sum + i;
+(gdb) n
+17      for(int i=1; i<=n; i++)
+(gdb) n
+19          sum = sum + i;
+(gdb) n
+17      for(int i=1; i<=n; i++)
+(gdb) n
+19          sum = sum + i;
+(gdb) n
+17      for(int i=1; i<=n; i++)
+(gdb) n
+19          sum = sum + i;
+(gdb) n
+17      for(int i=1; i<=n; i++)
+(gdb) n
+19          sum = sum + i;
+(gdb) n
+17      for(int i=1; i<=n; i++)
+(gdb) n
+19          sum = sum + i;
+(gdb) n
+17      for(int i=1; i<=n; i++)
+(gdb) n
+19          sum = sum + i;
+(gdb) n
+17      for(int i=1; i<=n; i++)
+(gdb) n
+19          sum = sum + i;
+(gdb) n
+17      for(int i=1; i<=n; i++)
+(gdb) n
+21      return sum;
+(gdb) n
+22  }
+(gdb) b main
+Note: breakpoint 1 also set at pc 0x55807b400827.
+Breakpoint 2 at 0x55807b400827: file p6original.c, line 36.
+(gdb) n
+main () at p6original.c:39
 39      output(n, sum);
+(gdb) s
+output (n=9, sum=45) at p6original.c:26
+26      for(int i=1; i<n; i++)
+(gdb) n
+30      printf("sum of %d numbers  is %d\n", n, sum);
 (gdb) n
 sum of 9 numbers  is 45
+31  }
+(gdb) n
+main () at p6original.c:40
 40      return 0;
-(gdb) c
+(gdb) n
+41  }(gdb) c
 Continuing.
-[Inferior 1 (process 350) exited normally]
+[Inferior 1 (process 222) exited normally]

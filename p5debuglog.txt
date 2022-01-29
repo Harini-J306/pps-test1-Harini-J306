@@ -1,24 +1,79 @@
+GNU bash, version 4.4.20(1)-release (x86_64-pc-linux-gnu)
+ cloning into https://github.com/revacprogramming/pps-test1-Harini-J306...
+remote: Enumerating objects: 50, done.        
+remote: Counting objects: 100% (50/50), done.        
+remote: Compressing objects: 100% (37/37), done.        
+remote: Total 50 (delta 14), reused 44 (delta 9), pack-reused 0        
+From https://github.com/revacprogramming/pps-test1-Harini-J306
+ * [new branch]      main       -> origin/main
+  HEAD branch: main
+Already on 'main'
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+gcc -g p5original.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
 (gdb) b main
 Breakpoint 1 at 0x836: file p5original.c, line 22.
 (gdb) r
-Starting program: /home/runner/pps-test1-Harini-J306-21/a.out 
+Starting program: /home/runner/pps-test1-Harini-J306-30/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
 Breakpoint 1, main () at p5original.c:22
 22  {
 (gdb) n
 24      input(&a,&b,&c);
+(gdb) s
+input (a=0x7ffdb74cc688, b=0x7ffdb74cc68c, c=0x7ffdb74cc690) at p5original.c:4
+4       printf("enter three numbers\n");
 (gdb) n
 enter three numbers
-3
+5       scanf("%d%d%d",a,b,c);
+(gdb) n
 7
-4
+8
+6
+6   }
+(gdb) n
+main () at p5original.c:25
 25      cmp(a,b,c,&large);
+(gdb) s
+cmp (a=7, b=8, c=6, large=0x7ffdb74cc694) at p5original.c:9
+9       *large=0;
 (gdb) n
+10    if(a>b && a>c)
+(gdb) n
+12    else if(b>a && b>c)
+(gdb) n
+13    *large=b;
+(gdb) n
+16  }
+(gdb) n
+main () at p5original.c:26
 26      output(large);
+(gdb) s
+output (large=8) at p5original.c:19
+19      printf("%d is greatest\n",large);
 (gdb) n
-7 is greatest
+8 is greatest
+20  }
+(gdb) n
+main () at p5original.c:27
 27      return 0;
-(gdb) c
+(gdb) n
+28  }(gdb) c
 Continuing.
-[Inferior 1 (process 201) exited normally]
+[Inferior 1 (process 95) exited normally]
